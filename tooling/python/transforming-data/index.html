@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Transforming Data | Frictionless Data</title>
+    <meta name="description" content="Bringing simplicity and gracefulness to the data experience">
+    <script src="https://unpkg.com/honeycomb-grid@3.1.3"></script>
+  <script src="https://unpkg.com/svg.js@2.7.1"></script>
+    <meta property="og:image" content="/img/frictionless-color-logo.png"><meta name="twitter:image" content="/img/frictionless-color-logo.png"><meta property="og:url" content="/tooling/python/transforming-data/"><meta name="twitter:url" content="/tooling/python/transforming-data/"><meta property="og:title" content="Transforming Data"><meta name="twitter:title" content="Transforming Data"><meta itemprop="name" content="Transforming Data"><meta property="og:type" content="article"><meta name="twitter:card" content="summary"><meta property="og:site_name" content="Frictionless Data">
+    <link rel="preload" href="/assets/css/0.styles.e2dc8718.css" as="style"><link rel="preload" href="/assets/js/app.027bcbbd.js" as="script"><link rel="preload" href="/assets/js/5.ac1a1d5f.js" as="script"><link rel="preload" href="/assets/js/2.66881210.js" as="script"><link rel="preload" href="/assets/js/138.fcf88379.js" as="script"><link rel="prefetch" href="/assets/js/10.15026140.js"><link rel="prefetch" href="/assets/js/100.bf598e8d.js"><link rel="prefetch" href="/assets/js/101.7f152222.js"><link rel="prefetch" href="/assets/js/102.6cac2008.js"><link rel="prefetch" href="/assets/js/103.7ac0d122.js"><link rel="prefetch" href="/assets/js/104.d2a0bb8f.js"><link rel="prefetch" href="/assets/js/105.8fbefcec.js"><link rel="prefetch" href="/assets/js/106.915a9ea0.js"><link rel="prefetch" href="/assets/js/107.4a85c8aa.js"><link rel="prefetch" href="/assets/js/108.41da8b56.js"><link rel="prefetch" href="/assets/js/109.f079bce5.js"><link rel="prefetch" href="/assets/js/11.80038541.js"><link rel="prefetch" href="/assets/js/110.8c865d4f.js"><link rel="prefetch" href="/assets/js/111.5197b5d6.js"><link rel="prefetch" href="/assets/js/112.aa34ed25.js"><link rel="prefetch" href="/assets/js/113.5f1d317f.js"><link rel="prefetch" href="/assets/js/114.261b17d4.js"><link rel="prefetch" href="/assets/js/115.ba4d4b70.js"><link rel="prefetch" href="/assets/js/116.d5fce7fe.js"><link rel="prefetch" href="/assets/js/117.4e0fac6f.js"><link rel="prefetch" href="/assets/js/118.87b69586.js"><link rel="prefetch" href="/assets/js/119.806940c7.js"><link rel="prefetch" href="/assets/js/12.21f77b54.js"><link rel="prefetch" href="/assets/js/120.f4cf5246.js"><link rel="prefetch" href="/assets/js/121.17f70591.js"><link rel="prefetch" href="/assets/js/122.806a1711.js"><link rel="prefetch" href="/assets/js/123.38a8650c.js"><link rel="prefetch" href="/assets/js/124.83aaccae.js"><link rel="prefetch" href="/assets/js/125.76987b11.js"><link rel="prefetch" href="/assets/js/126.4fb984a9.js"><link rel="prefetch" href="/assets/js/127.43e9efef.js"><link rel="prefetch" href="/assets/js/128.b49a48e0.js"><link rel="prefetch" href="/assets/js/129.b4df96d8.js"><link rel="prefetch" href="/assets/js/13.d58f4e1f.js"><link rel="prefetch" href="/assets/js/130.534aa050.js"><link rel="prefetch" href="/assets/js/131.801c7591.js"><link rel="prefetch" href="/assets/js/132.89864772.js"><link rel="prefetch" href="/assets/js/133.08a906c3.js"><link rel="prefetch" href="/assets/js/134.294f2b64.js"><link rel="prefetch" href="/assets/js/135.f62efce0.js"><link rel="prefetch" href="/assets/js/136.766a8f8d.js"><link rel="prefetch" href="/assets/js/137.df804de4.js"><link rel="prefetch" href="/assets/js/139.772af739.js"><link rel="prefetch" href="/assets/js/14.f517a223.js"><link rel="prefetch" href="/assets/js/140.17ff679b.js"><link rel="prefetch" href="/assets/js/141.0f5f8e09.js"><link rel="prefetch" href="/assets/js/142.508b2d20.js"><link rel="prefetch" href="/assets/js/143.0ae9c9bb.js"><link rel="prefetch" href="/assets/js/144.1e805b66.js"><link rel="prefetch" href="/assets/js/145.69d4e909.js"><link rel="prefetch" href="/assets/js/146.9c60c394.js"><link rel="prefetch" href="/assets/js/147.ded8539c.js"><link rel="prefetch" href="/assets/js/148.0926b1c8.js"><link rel="prefetch" href="/assets/js/149.68ba23c4.js"><link rel="prefetch" href="/assets/js/15.a040b21a.js"><link rel="prefetch" href="/assets/js/150.9d1b97c6.js"><link rel="prefetch" href="/assets/js/151.410c4e37.js"><link rel="prefetch" href="/assets/js/152.3114a53c.js"><link rel="prefetch" href="/assets/js/153.8764644a.js"><link rel="prefetch" href="/assets/js/154.62752e8d.js"><link rel="prefetch" href="/assets/js/155.a60724de.js"><link rel="prefetch" href="/assets/js/156.6eb57ea1.js"><link rel="prefetch" href="/assets/js/157.595d57f0.js"><link rel="prefetch" href="/assets/js/158.8dab2974.js"><link rel="prefetch" href="/assets/js/159.0018baf9.js"><link rel="prefetch" href="/assets/js/16.ae7f9b74.js"><link rel="prefetch" href="/assets/js/17.762b27ae.js"><link rel="prefetch" href="/assets/js/18.2323b7c9.js"><link rel="prefetch" href="/assets/js/19.1541160f.js"><link rel="prefetch" href="/assets/js/20.a1568074.js"><link rel="prefetch" href="/assets/js/21.370e0012.js"><link rel="prefetch" href="/assets/js/22.dd56cd77.js"><link rel="prefetch" href="/assets/js/23.14c19025.js"><link rel="prefetch" href="/assets/js/24.2fa5244d.js"><link rel="prefetch" href="/assets/js/25.53c78053.js"><link rel="prefetch" href="/assets/js/26.32620010.js"><link rel="prefetch" href="/assets/js/27.8a5578d0.js"><link rel="prefetch" href="/assets/js/28.7c07fd2f.js"><link rel="prefetch" href="/assets/js/29.4f104860.js"><link rel="prefetch" href="/assets/js/3.06ca8e4c.js"><link rel="prefetch" href="/assets/js/30.6059fd52.js"><link rel="prefetch" href="/assets/js/31.06aa93d1.js"><link rel="prefetch" href="/assets/js/32.4adbdc71.js"><link rel="prefetch" href="/assets/js/33.e99dad5c.js"><link rel="prefetch" href="/assets/js/34.2f62a987.js"><link rel="prefetch" href="/assets/js/35.ecf050e0.js"><link rel="prefetch" href="/assets/js/36.032e7341.js"><link rel="prefetch" href="/assets/js/37.31244003.js"><link rel="prefetch" href="/assets/js/38.32715e06.js"><link rel="prefetch" href="/assets/js/39.d83cf27e.js"><link rel="prefetch" href="/assets/js/4.244cf990.js"><link rel="prefetch" href="/assets/js/40.fbb2db69.js"><link rel="prefetch" href="/assets/js/41.0624f5f2.js"><link rel="prefetch" href="/assets/js/42.6d5e6fff.js"><link rel="prefetch" href="/assets/js/43.ef8d519b.js"><link rel="prefetch" href="/assets/js/44.5c17b2c1.js"><link rel="prefetch" href="/assets/js/45.6da0f6fe.js"><link rel="prefetch" href="/assets/js/46.0d04341d.js"><link rel="prefetch" href="/assets/js/47.03f9ae98.js"><link rel="prefetch" href="/assets/js/48.484a66d3.js"><link rel="prefetch" href="/assets/js/49.c6d9b59d.js"><link rel="prefetch" href="/assets/js/50.aaf0b753.js"><link rel="prefetch" href="/assets/js/51.0f8960f8.js"><link rel="prefetch" href="/assets/js/52.98bdfb16.js"><link rel="prefetch" href="/assets/js/53.16161a02.js"><link rel="prefetch" href="/assets/js/54.f0b5bf68.js"><link rel="prefetch" href="/assets/js/55.e7de038c.js"><link rel="prefetch" href="/assets/js/56.bcbafa39.js"><link rel="prefetch" href="/assets/js/57.5046b94a.js"><link rel="prefetch" href="/assets/js/58.79eaba6c.js"><link rel="prefetch" href="/assets/js/59.b984eb3c.js"><link rel="prefetch" href="/assets/js/6.960c9796.js"><link rel="prefetch" href="/assets/js/60.2367f34e.js"><link rel="prefetch" href="/assets/js/61.0f20a566.js"><link rel="prefetch" href="/assets/js/62.fd59293e.js"><link rel="prefetch" href="/assets/js/63.f9c6cb22.js"><link rel="prefetch" href="/assets/js/64.d93469c8.js"><link rel="prefetch" href="/assets/js/65.fa9080e4.js"><link rel="prefetch" href="/assets/js/66.8f0412c0.js"><link rel="prefetch" href="/assets/js/67.49e62a40.js"><link rel="prefetch" href="/assets/js/68.ec6e8323.js"><link rel="prefetch" href="/assets/js/69.34a4998f.js"><link rel="prefetch" href="/assets/js/7.fafbb0ae.js"><link rel="prefetch" href="/assets/js/70.728a90bf.js"><link rel="prefetch" href="/assets/js/71.02867ecf.js"><link rel="prefetch" href="/assets/js/72.6af803b4.js"><link rel="prefetch" href="/assets/js/73.3da5b515.js"><link rel="prefetch" href="/assets/js/74.0fd80ae8.js"><link rel="prefetch" href="/assets/js/75.a2eb69a1.js"><link rel="prefetch" href="/assets/js/76.bc7e80da.js"><link rel="prefetch" href="/assets/js/77.ca59a310.js"><link rel="prefetch" href="/assets/js/78.0804486c.js"><link rel="prefetch" href="/assets/js/79.c3b2d176.js"><link rel="prefetch" href="/assets/js/8.0d594dcb.js"><link rel="prefetch" href="/assets/js/80.7d72241d.js"><link rel="prefetch" href="/assets/js/81.ca25a92a.js"><link rel="prefetch" href="/assets/js/82.0a649ed9.js"><link rel="prefetch" href="/assets/js/83.29f06a95.js"><link rel="prefetch" href="/assets/js/84.6cbc11a4.js"><link rel="prefetch" href="/assets/js/85.72902424.js"><link rel="prefetch" href="/assets/js/86.40cb6911.js"><link rel="prefetch" href="/assets/js/87.299e0a2a.js"><link rel="prefetch" href="/assets/js/88.e44184d3.js"><link rel="prefetch" href="/assets/js/89.204ac877.js"><link rel="prefetch" href="/assets/js/9.b5b2b4e4.js"><link rel="prefetch" href="/assets/js/90.99328a73.js"><link rel="prefetch" href="/assets/js/91.d6ce2917.js"><link rel="prefetch" href="/assets/js/92.fd4f11fe.js"><link rel="prefetch" href="/assets/js/93.0703472c.js"><link rel="prefetch" href="/assets/js/94.1bcaf3e8.js"><link rel="prefetch" href="/assets/js/95.e49a7767.js"><link rel="prefetch" href="/assets/js/96.08fe2c65.js"><link rel="prefetch" href="/assets/js/97.80843003.js"><link rel="prefetch" href="/assets/js/98.02d0dc7b.js"><link rel="prefetch" href="/assets/js/99.8298f92d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e2dc8718.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="banner w-full bg-yellow"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/frictionless-color-full-logo.svg" alt="Frictionless Data" class="logo"> <span class="site-name can-hide">Frictionless Data</span></a> <div class="links"><nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link">Guide</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tooling Menu" class="dropdown-title"><span class="title">Tooling</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tooling/application/" class="nav-link">Application</a></li><li class="dropdown-item"><!----> <a href="/tooling/python/" class="nav-link router-link-active">Framework (Python)</a></li><li class="dropdown-item"><!----> <a href="/tooling/javascript/" class="nav-link">Framework (JavaScript)</a></li><li class="dropdown-item"><!----> <a href="/tooling/libraries/" class="nav-link">Libraries</a></li><li class="dropdown-item"><h4></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/tooling/others/goodtables/" class="nav-link">GoodTables</a></li><li class="dropdown-subitem"><a href="/tooling/others/datahub/" class="nav-link">DataHub</a></li><li class="dropdown-subitem"><a href="/tooling/others/labs/" class="nav-link">Labs</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Specs Menu" class="dropdown-title"><span class="title">Specs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://specs.frictionlessdata.io/table-schema/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Table Schema
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://specs.frictionlessdata.io/data-package/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Data Package
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Use Cases Menu" class="dropdown-title"><span class="title">Use Cases</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/reproducible-research/" class="nav-link">Reproducible Research</a></li><li class="dropdown-item"><!----> <a href="/tag/case-studies/" class="nav-link">Case Studies</a></li><li class="dropdown-item"><!----> <a href="/tag/pilot/" class="nav-link">Pilots</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Community Menu" class="dropdown-title"><span class="title">Community</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://discordapp.com/invite/Sewv6av" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Chat
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/frictionlessdata/forum/issues" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Forum
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/support/" class="nav-link">Support</a></li><li class="dropdown-item"><!----> <a href="/events/" class="nav-link">Events Calendar</a></li><li class="dropdown-item"><!----> <a href="/contribute/" class="nav-link">Contribute</a></li><li class="dropdown-item"><!----> <a href="/code-of-conduct/" class="nav-link">Code of Conduct</a></li></ul></div></div><div class="nav-item"><a href="/team/" class="nav-link">Team</a></div><div class="nav-item"><a href="/about/" class="nav-link">About</a></div><div class="nav-item"><a href="/blog/" class="nav-link">Blog</a></div> <!----></nav> <div class="search-box md:pl-4"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <a href="https://discordapp.com/invite/Sewv6av" title="Discord" class="navbaricon"><img src="/img/home/discord-icon.svg" class="px-2 w-5 pt-4"></a> <a href="https://twitter.com/frictionlessd8a" title="Twitter" class="navbaricon"><img src="/img/home/twitter-icon.svg" class="px-2 w-5 pt-4"></a> <a href="https://github.com/frictionlessdata/project/" title="GitHub" class="navbaricon"><img src="/img/home/github-icon.svg" class="px-2 w-5 pt-4"></a></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link">Guide</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tooling Menu" class="dropdown-title"><span class="title">Tooling</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tooling/application/" class="nav-link">Application</a></li><li class="dropdown-item"><!----> <a href="/tooling/python/" class="nav-link router-link-active">Framework (Python)</a></li><li class="dropdown-item"><!----> <a href="/tooling/javascript/" class="nav-link">Framework (JavaScript)</a></li><li class="dropdown-item"><!----> <a href="/tooling/libraries/" class="nav-link">Libraries</a></li><li class="dropdown-item"><h4></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/tooling/others/goodtables/" class="nav-link">GoodTables</a></li><li class="dropdown-subitem"><a href="/tooling/others/datahub/" class="nav-link">DataHub</a></li><li class="dropdown-subitem"><a href="/tooling/others/labs/" class="nav-link">Labs</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Specs Menu" class="dropdown-title"><span class="title">Specs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://specs.frictionlessdata.io/table-schema/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Table Schema
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://specs.frictionlessdata.io/data-package/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Data Package
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Use Cases Menu" class="dropdown-title"><span class="title">Use Cases</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/reproducible-research/" class="nav-link">Reproducible Research</a></li><li class="dropdown-item"><!----> <a href="/tag/case-studies/" class="nav-link">Case Studies</a></li><li class="dropdown-item"><!----> <a href="/tag/pilot/" class="nav-link">Pilots</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Community Menu" class="dropdown-title"><span class="title">Community</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://discordapp.com/invite/Sewv6av" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Chat
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/frictionlessdata/forum/issues" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Forum
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/support/" class="nav-link">Support</a></li><li class="dropdown-item"><!----> <a href="/events/" class="nav-link">Events Calendar</a></li><li class="dropdown-item"><!----> <a href="/contribute/" class="nav-link">Contribute</a></li><li class="dropdown-item"><!----> <a href="/code-of-conduct/" class="nav-link">Code of Conduct</a></li></ul></div></div><div class="nav-item"><a href="/team/" class="nav-link">Team</a></div><div class="nav-item"><a href="/about/" class="nav-link">About</a></div><div class="nav-item"><a href="/blog/" class="nav-link">Blog</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Transforming Data</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tooling/python/transforming-data/#transform-functions" class="sidebar-link">Transform Functions</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tooling/python/transforming-data/#transforming-resource" class="sidebar-link">Transforming Resource</a></li><li class="sidebar-sub-header"><a href="/tooling/python/transforming-data/#transforming-package" class="sidebar-link">Transforming Package</a></li><li class="sidebar-sub-header"><a href="/tooling/python/transforming-data/#transforming-pipeline" class="sidebar-link">Transforming Pipeline</a></li></ul></li><li><a href="/tooling/python/transforming-data/#transform-options" class="sidebar-link">Transform Options</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/tooling/python/transforming-data/#transform-principles" class="sidebar-link">Transform Principles</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/tooling/python/transforming-data/#transform-steps" class="sidebar-link">Transform Steps</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/tooling/python/transforming-data/#resource-steps" class="sidebar-link">Resource Steps</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/tooling/python/transforming-data/#table-steps" class="sidebar-link">Table Steps</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/tooling/python/transforming-data/#field-steps" class="sidebar-link">Field Steps</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/tooling/python/transforming-data/#row-steps" class="sidebar-link">Row Steps</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/tooling/python/transforming-data/#cell-steps" class="sidebar-link">Cell Steps</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/tooling/python/transforming-data/#custom-steps" class="sidebar-link">Custom Steps</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/tooling/python/transforming-data/#transform-utils" class="sidebar-link">Transform Utils</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/tooling/python/transforming-data/#working-with-petl" class="sidebar-link">Working with PETL</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/tooling/python/transforming-data/#working-with-dataflows" class="sidebar-link">Working with DataFlows</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="transforming-data"><a href="#transforming-data" class="header-anchor">#</a> Transforming Data</h1> <p><a href="https://colab.research.google.com/drive/1C4dFWDExyxzGIwLUovrDQZghZK4JK2PD" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <blockquote><p><strong>Both the transform functionality and this document are in the draft state. It’s under active development and will be stabilized by the end of 2020.</strong></p></blockquote> <p>Transforming data in Frictionless means modifying a data + metadata from the state A to the state B. For example, it can be a dirty Excel file we need to transform to a cleaned CSV file or a folder of data files we want to update and save as a data package.</p> <p>For the core transform functions Frictionless uses amazing <a href="https://petl.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer">PETL<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> project under the hood. This library provides lazy-loading functinality in running data pipelines. On top of it Frictionless adds metadata management and a bridge between already familiar concepts like Pacakge/Resource and PETL’s processors.</p> <p>Frictionless supports a few different kinds of data and metadata transformations:</p> <ul><li>resource and package transforms</li> <li>transforms based on a declarative pipeline</li></ul> <p>The main difference between the first two and pipelines that resource and package transforms are imperative while pipelines can be created beforehand or shared as a JSON file. Also, Frictionless supports a <a href="https://colab.research.google.com/drive/1MbEhvyrIIW6lExySC48pakjLSAqxHj3t" target="_blank" rel="noopener noreferrer">Dataflows<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> pipeline runner. You need to install the <code>dataflows</code> plugin to use it.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">!</span> pip <span class="token function">install</span> frictionless
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">!</span> <span class="token function">wget</span> -q -O transform.csv https://raw.githubusercontent.com/frictionlessdata/frictionless-py/master/data/transform.csv
+<span class="token operator">!</span> <span class="token function">cat</span> transform.csv
+</code></pre></div><pre><code>id,name,population
+1,germany,83
+2,france,66
+3,spain,47
+</code></pre> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">!</span> <span class="token function">wget</span> -q -O transform-groups.csv https://raw.githubusercontent.com/frictionlessdata/frictionless-py/master/data/transform-groups.csv
+<span class="token operator">!</span> <span class="token function">cat</span> transform-groups.csv
+</code></pre></div><pre><code>id,name,population,year
+1,germany,83,2020
+2,germany,77,1920
+3,france,66,2020
+4,france,54,1920
+5,spain,47,2020
+6,spain,33,1920
+</code></pre> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">!</span> <span class="token function">wget</span> -q -O transform-pivot.csv https://raw.githubusercontent.com/frictionlessdata/frictionless-py/master/data/transform-pivot.csv
+<span class="token operator">!</span> <span class="token function">cat</span> transform-pivot.csv
+</code></pre></div><pre><code>region,gender,style,units
+east,boy,tee,12
+east,boy,golf,14
+east,boy,fancy,7
+east,girl,tee,3
+east,girl,golf,8
+east,girl,fancy,18
+west,boy,tee,12
+west,boy,golf,15
+west,boy,fancy,8
+west,girl,tee,6
+west,girl,golf,16
+west,girl,fancy,1
+</code></pre> <h2 id="transform-functions"><a href="#transform-functions" class="header-anchor">#</a> Transform Functions</h2> <p>The high-level interface for transforming data provided by Frictionless is a set of <code>transform</code> functions:</p> <ul><li><code>transform</code>: it will detect the source type and transform data accordingly</li> <li><code>transform_resource</code>: it transforms a resource</li> <li><code>transform_package</code>: it transforms a package</li> <li><code>transform_pipeline</code>: it transforms resource or package based on a declarative pipeline definition</li></ul> <h3 id="transforming-resource"><a href="#transforming-resource" class="header-anchor">#</a> Transforming Resource</h3> <p>Let’s write our first transform. It’s as easy as defining a source resource, applying transform steps and getting back a resulting target resource:</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>table_normalize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>table_melt<span class="token punctuation">(</span>field_name<span class="token operator">=</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'name', 'type': 'string'},
+            {'name': 'variable'},
+            {'name': 'value'}]}
+[Row([('name', 'germany'), ('variable', 'id'), ('value', 1)]),
+ Row([('name', 'germany'), ('variable', 'population'), ('value', 83)]),
+ Row([('name', 'france'), ('variable', 'id'), ('value', 2)]),
+ Row([('name', 'france'), ('variable', 'population'), ('value', 66)]),
+ Row([('name', 'spain'), ('variable', 'id'), ('value', 3)]),
+ Row([('name', 'spain'), ('variable', 'population'), ('value', 47)])]
+</code></pre> <p>Let’s break the transorming steps we applied down:</p> <ol><li><code>steps.table_normalize</code> - cast data types and shape the table according to the schema, inferred or provided</li> <li><code>steps.table_melt</code> - melt the table as it’s done in R-Language or in other scientific libraries like <code>pandas</code></li></ol> <p>Thare are dozens of other available steps that will be covered below.</p> <h3 id="transforming-package"><a href="#transforming-package" class="header-anchor">#</a> Transforming Package</h3> <p>Transforming a package is not much more difficult than a resource. Basically, a package is a set of resources so we will be transforming resources exactly the same way as we did above + we will be managing the resources list itself, adding or removing them:</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Package<span class="token punctuation">(</span>resources<span class="token operator">=</span><span class="token punctuation">[</span>Resource<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'main'</span><span class="token punctuation">,</span> path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>resource_add<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'extra'</span><span class="token punctuation">,</span> path<span class="token operator">=</span><span class="token string">'transform.csv'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>resource_transform<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'main'</span><span class="token punctuation">,</span> steps<span class="token operator">=</span><span class="token punctuation">[</span>
+            steps<span class="token punctuation">.</span>table_merge<span class="token punctuation">(</span>resource<span class="token operator">=</span><span class="token string">'extra'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            steps<span class="token punctuation">.</span>row_sort<span class="token punctuation">(</span>field_names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>resource_remove<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;extra&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>resource_names<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>get_resource<span class="token punctuation">(</span><span class="token string">'main'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>get_resource<span class="token punctuation">(</span><span class="token string">'main'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>['main']
+{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 83)]),
+ Row([('id', 1), ('name', 'germany'), ('population', 83)]),
+ Row([('id', 2), ('name', 'france'), ('population', 66)]),
+ Row([('id', 2), ('name', 'france'), ('population', 66)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47)])]
+</code></pre> <p>The exact tranformation we have applied actually doesn’t make any sense as we just duplicted every row of the <code>main</code> resource. But it must have provided basic undetstanding of how simple and at the same time flexible package transformations can be.</p> <h3 id="transforming-pipeline"><a href="#transforming-pipeline" class="header-anchor">#</a> Transforming Pipeline</h3> <p>A pipeline is a metadata object having one of these types:</p> <ul><li>resource</li> <li>package</li> <li>dataflows</li> <li>others (depending on custom plugins you use)</li></ul> <p>For resource and package types it’s basically the same functionality as we have seen above but written declaratively. So let’s just run the same resource transformation as we did in the <code>Tranforming Resource</code> section:</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Pipeline<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+pipeline <span class="token operator">=</span> Pipeline<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token string">'type'</span><span class="token punctuation">:</span> <span class="token string">'resource'</span><span class="token punctuation">,</span>
+    <span class="token string">'source'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">'path'</span><span class="token punctuation">:</span> <span class="token string">'transform.csv'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">'steps'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">'type'</span><span class="token punctuation">:</span> <span class="token string">'tableNormalize'</span><span class="token punctuation">,</span> <span class="token string">'spec'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">'type'</span><span class="token punctuation">:</span> <span class="token string">'tableMelt'</span><span class="token punctuation">,</span> <span class="token string">'spec'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">'fieldName'</span><span class="token punctuation">:</span> <span class="token string">'name'</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>pipeline<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'name', 'type': 'string'},
+            {'name': 'variable'},
+            {'name': 'value'}]}
+[Row([('name', 'germany'), ('variable', 'id'), ('value', 1)]),
+ Row([('name', 'germany'), ('variable', 'population'), ('value', 83)]),
+ Row([('name', 'france'), ('variable', 'id'), ('value', 2)]),
+ Row([('name', 'france'), ('variable', 'population'), ('value', 66)]),
+ Row([('name', 'spain'), ('variable', 'id'), ('value', 3)]),
+ Row([('name', 'spain'), ('variable', 'population'), ('value', 47)])]
+</code></pre> <p>And as we had expected we got the same result.</p> <h2 id="transform-options"><a href="#transform-options" class="header-anchor">#</a> Transform Options</h2> <p>The <code>transorm</code> function accepts the <code>source</code> argument which can be a resource, a package or a pipeline descriptor</p> <p><strong>Resource</strong></p> <p>The <code>transform_resource</code> function also accepts:</p> <ul><li><code>steps</code> argument to define which steps should be applied on the source resource.</li></ul> <p><strong>Package</strong></p> <p>The <code>transform_package</code> function also accepts:</p> <ul><li><code>steps</code> argument to define which steps should be applied on the source package.</li></ul> <p><strong>Pipeline</strong></p> <p>The <code>transform_pipeline</code> function doesn’t accept any additional arguments.</p> <h2 id="transform-principles"><a href="#transform-principles" class="header-anchor">#</a> Transform Principles</h2> <p>Frictionless Transforms bases on a few core principles which is shared with other parts of the framework:</p> <p><strong>Conceptual Simplicity</strong></p> <p>Frictionless Transforms is not more than a list of functions that accept a source resource/package object and return a target resource/package object. Every function just updates the input’s metadata and data and that’s it. Thanks to this simplicity even a non-techical user can read the <a href="https://github.com/frictionlessdata/frictionless-py/blob/7ad8e692ad00131cdc9fa51258d8b860c62e77bc/frictionless/transform/resource.py#L7" target="_blank" rel="noopener noreferrer">source code<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> of the transform function and understand how it works. And understanding the tools you use can be really important for mastering them.</p> <p><strong>Metadata Matters</strong></p> <p>There is plenty of great ETL-frameworks written in Python and other languages. As said, we use one of them (PETL) under the hood. The core difference between Frictionless and others that we treat metadata as a first-class citizien. It means that you don’t loose type and other important information during the pipeline evaluation.</p> <p><strong>Data Streaming</strong></p> <p>Whenever it’s possible Frictionless streams the data instead of reading it into memory. For example, for sorting big tables we use a memory usage threshold and it’s met we use file system to unload the data. Ability to stream the data give users power to work with files of any size.</p> <p><strong>Lazy Evaluation</strong></p> <p>Unlike to systems like <code>Data Package Pipelines</code> core Frictionless Transforms doesn’t have a back-pressured flow as all data manupulation happen on-demand. For example, if you transform a data package containing 10 big csv files but you only need to reshape one table Frictionless will not even read other tables. Actually, when you call <code>target = transform(source)</code> it does almost nothing untill the data reading call like <code>target.read_rows()</code> is made.</p> <p><strong>Lean Processing</strong></p> <p>Similiar to the section above, Frictionless tries to be as much explicit as possible regarding actions taken. For example, it will not use CPU resources to cast data unless a user adds a “normalize”, “validate” or similiar steps. So it’s possible to transform rather big file without even casting types, for example, if you just need to reshape it.</p> <h2 id="transform-steps"><a href="#transform-steps" class="header-anchor">#</a> Transform Steps</h2> <p>Frictionless includes more than 40+ builtin transform steps. They are groupped by the object so you can find them easily if you have code autocomplition. Start typing, for example, <code>steps.table...</code> and you will see all the available steps. The groups are listed below and you will find every group described in more detail in the next sections. It’s also possible to write custom transform steps. Please read the section below to learn more about it.</p> <ul><li>resource</li> <li>table</li> <li>field</li> <li>row</li> <li>cell</li></ul> <h2 id="resource-steps"><a href="#resource-steps" class="header-anchor">#</a> Resource Steps</h2> <p><strong>Add Resource</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Package<span class="token punctuation">(</span>resources<span class="token operator">=</span><span class="token punctuation">[</span>Resource<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'main'</span><span class="token punctuation">,</span> path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>resource_add<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'extra'</span><span class="token punctuation">,</span> path<span class="token operator">=</span><span class="token string">'transform.csv'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>resource_names<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>get_resource<span class="token punctuation">(</span><span class="token string">'extra'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>get_resource<span class="token punctuation">(</span><span class="token string">'extra'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>['main', 'extra']
+{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 83)]),
+ Row([('id', 2), ('name', 'france'), ('population', 66)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47)])]
+</code></pre> <p><strong>Remove Resource</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Package<span class="token punctuation">(</span>resources<span class="token operator">=</span><span class="token punctuation">[</span>Resource<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'main'</span><span class="token punctuation">,</span> path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>resource_remove<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'main'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'profile': 'data-package', 'resources': []}
+</code></pre> <p><strong>Transform Resource</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Package<span class="token punctuation">(</span>resources<span class="token operator">=</span><span class="token punctuation">[</span>Resource<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'main'</span><span class="token punctuation">,</span> path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>resource_add<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'extra'</span><span class="token punctuation">,</span> path<span class="token operator">=</span><span class="token string">'transform.csv'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>resource_transform<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'main'</span><span class="token punctuation">,</span> steps<span class="token operator">=</span><span class="token punctuation">[</span>
+            steps<span class="token punctuation">.</span>table_merge<span class="token punctuation">(</span>resource<span class="token operator">=</span><span class="token string">'extra'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            steps<span class="token punctuation">.</span>row_sort<span class="token punctuation">(</span>field_names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>resource_remove<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;extra&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>resource_names<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>get_resource<span class="token punctuation">(</span><span class="token string">'main'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>get_resource<span class="token punctuation">(</span><span class="token string">'main'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>['main']
+{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 83)]),
+ Row([('id', 1), ('name', 'germany'), ('population', 83)]),
+ Row([('id', 2), ('name', 'france'), ('population', 66)]),
+ Row([('id', 2), ('name', 'france'), ('population', 66)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47)])]
+</code></pre> <p><strong>Update Resource</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Package<span class="token punctuation">(</span>resources<span class="token operator">=</span><span class="token punctuation">[</span>Resource<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'main'</span><span class="token punctuation">,</span> path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>resource_update<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'main'</span><span class="token punctuation">,</span> title<span class="token operator">=</span><span class="token string">'Main Resource'</span><span class="token punctuation">,</span> description<span class="token operator">=</span><span class="token string">'For the docs'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>get_resource<span class="token punctuation">(</span><span class="token string">'main'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'compression': 'no',
+ 'compressionPath': '',
+ 'control': {'newline': ''},
+ 'description': 'For the docs',
+ 'dialect': {},
+ 'encoding': 'utf-8',
+ 'format': 'csv',
+ 'hashing': 'md5',
+ 'name': 'main',
+ 'path': 'transform.csv',
+ 'profile': 'tabular-data-resource',
+ 'query': {},
+ 'schema': {'fields': [{'name': 'id', 'type': 'integer'},
+                       {'name': 'name', 'type': 'string'},
+                       {'name': 'population', 'type': 'integer'}]},
+ 'scheme': 'file',
+ 'title': 'Main Resource'}
+</code></pre> <h2 id="table-steps"><a href="#table-steps" class="header-anchor">#</a> Table Steps</h2> <p><strong>Aggregate Table</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform-groups.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>table_normalize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>table_aggregate<span class="token punctuation">(</span>
+            group_name<span class="token operator">=</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> aggregation<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">&quot;sum&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token string">&quot;population&quot;</span><span class="token punctuation">,</span> <span class="token builtin">sum</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'name', 'type': 'string'}, {'name': 'sum'}]}
+[Row([('name', 'france'), ('sum', 120)]),
+ Row([('name', 'germany'), ('sum', 160)]),
+ Row([('name', 'spain'), ('sum', 80)])]
+</code></pre> <p><strong>Attach Tables</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+      steps<span class="token punctuation">.</span>table_attach<span class="token punctuation">(</span>resource<span class="token operator">=</span>Resource<span class="token punctuation">(</span>data<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;note&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;large&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;mid&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'},
+            {'name': 'note', 'type': 'string'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 83), ('note', 'large')]),
+ Row([('id', 2), ('name', 'france'), ('population', 66), ('note', 'mid')]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47), ('note', None)])]
+</code></pre> <p><strong>Debug Table</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+      steps<span class="token punctuation">.</span>table_debug<span class="token punctuation">(</span>function<span class="token operator">=</span><span class="token keyword">print</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>['1', 'germany', '83']
+['2', 'france', '66']
+['3', 'spain', '47']
+[Row([('id', 1), ('name', 'germany'), ('population', 83)]),
+ Row([('id', 2), ('name', 'france'), ('population', 66)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47)])]
+</code></pre> <p><strong>Diff Tables</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>table_normalize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>table_diff<span class="token punctuation">(</span>
+            resource<span class="token operator">=</span>Resource<span class="token punctuation">(</span>
+                data<span class="token operator">=</span><span class="token punctuation">[</span>
+                    <span class="token punctuation">[</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;population&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;germany&quot;</span><span class="token punctuation">,</span> <span class="token number">83</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">&quot;france&quot;</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">&quot;spain&quot;</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token punctuation">]</span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 2), ('name', 'france'), ('population', 66)])]
+</code></pre> <p><strong>Intersect Tables</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>table_normalize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>table_intersect<span class="token punctuation">(</span>
+            resource<span class="token operator">=</span>Resource<span class="token punctuation">(</span>
+                data<span class="token operator">=</span><span class="token punctuation">[</span>
+                    <span class="token punctuation">[</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;population&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;germany&quot;</span><span class="token punctuation">,</span> <span class="token number">83</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">&quot;france&quot;</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">&quot;spain&quot;</span><span class="token punctuation">,</span> <span class="token number">47</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token punctuation">]</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 83)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47)])]
+</code></pre> <p><strong>Join Tables</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>table_normalize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>table_join<span class="token punctuation">(</span>
+            resource<span class="token operator">=</span>Resource<span class="token punctuation">(</span>data<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;note&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;beer&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">&quot;vine&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            field_name<span class="token operator">=</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'},
+            {'name': 'note', 'type': 'string'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 83), ('note', 'beer')]),
+ Row([('id', 2), ('name', 'france'), ('population', 66), ('note', 'vine')])]
+</code></pre> <p><strong>Melt Table</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>table_normalize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>table_melt<span class="token punctuation">(</span>field_name<span class="token operator">=</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'name', 'type': 'string'},
+            {'name': 'variable'},
+            {'name': 'value'}]}
+[Row([('name', 'germany'), ('variable', 'id'), ('value', 1)]),
+ Row([('name', 'germany'), ('variable', 'population'), ('value', 83)]),
+ Row([('name', 'france'), ('variable', 'id'), ('value', 2)]),
+ Row([('name', 'france'), ('variable', 'population'), ('value', 66)]),
+ Row([('name', 'spain'), ('variable', 'id'), ('value', 3)]),
+ Row([('name', 'spain'), ('variable', 'population'), ('value', 47)])]
+</code></pre> <p><strong>Merge Tables</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>table_merge<span class="token punctuation">(</span>
+            resource<span class="token operator">=</span>Resource<span class="token punctuation">(</span>data<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;note&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">&quot;malta&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;island&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'},
+            {'name': 'note', 'type': 'string'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 83), ('note', None)]),
+ Row([('id', 2), ('name', 'france'), ('population', 66), ('note', None)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47), ('note', None)]),
+ Row([('id', 4), ('name', 'malta'), ('population', None), ('note', 'island')])]
+</code></pre> <p><strong>Pivot Table</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform-pivot.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>table_normalize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>table_pivot<span class="token punctuation">(</span>f1<span class="token operator">=</span><span class="token string">&quot;region&quot;</span><span class="token punctuation">,</span> f2<span class="token operator">=</span><span class="token string">&quot;gender&quot;</span><span class="token punctuation">,</span> f3<span class="token operator">=</span><span class="token string">&quot;units&quot;</span><span class="token punctuation">,</span> aggfun<span class="token operator">=</span><span class="token builtin">sum</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'region', 'type': 'string'},
+            {'name': 'boy', 'type': 'integer'},
+            {'name': 'girl', 'type': 'integer'}]}
+[Row([('region', 'east'), ('boy', 33), ('girl', 29)]),
+ Row([('region', 'west'), ('boy', 35), ('girl', 23)])]
+</code></pre> <p><strong>Print Table</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>table_normalize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>table_print<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+</code></pre></div><pre><code>==  =======  ==========
+id  name     population
+==  =======  ==========
+ 1  germany          83
+ 2  france           66
+ 3  spain            47
+==  =======  ==========
+</code></pre> <p><strong>Recast Table</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>table_normalize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>table_melt<span class="token punctuation">(</span>field_name<span class="token operator">=</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>table_recast<span class="token punctuation">(</span>field_name<span class="token operator">=</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 83)]),
+ Row([('id', 2), ('name', 'france'), ('population', 66)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47)])]
+</code></pre> <p><strong>Transpose Table</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>table_normalize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>table_transpose<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'name', 'type': 'string'},
+            {'name': 'germany', 'type': 'integer'},
+            {'name': 'france', 'type': 'integer'},
+            {'name': 'spain', 'type': 'integer'}]}
+[Row([('name', 'population'), ('germany', 83), ('france', 66), ('spain', 47)])]
+</code></pre> <p><strong>Validate Table</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>cell_set<span class="token punctuation">(</span>field_name<span class="token operator">=</span><span class="token string">&quot;population&quot;</span><span class="token punctuation">,</span> value<span class="token operator">=</span><span class="token string">&quot;bad&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>table_validate<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+  pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> exception<span class="token punctuation">:</span>
+  pprint<span class="token punctuation">(</span>exception<span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+FrictionlessException('[step-error] The transfrom step has an error: &quot;table_validate&quot; raises &quot;[type-error] The cell &quot;bad&quot; in row at position &quot;2&quot; and field &quot;population&quot; at position &quot;3&quot; has incompatible type: type is &quot;integer/default&quot;&quot;',)
+</code></pre> <p><strong>Write Table</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>table_write<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">'transform.json'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token operator">!</span> <span class="token function">cat</span> transform.json
+</code></pre></div><pre><code>[
+  [
+    &quot;id&quot;,
+    &quot;name&quot;,
+    &quot;population&quot;
+  ],
+  [
+    1,
+    &quot;germany&quot;,
+    83
+  ],
+  [
+    2,
+    &quot;france&quot;,
+    66
+  ],
+  [
+    3,
+    &quot;spain&quot;,
+    47
+  ]
+]
+</code></pre> <h2 id="field-steps"><a href="#field-steps" class="header-anchor">#</a> Field Steps</h2> <p><strong>Add Field</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>field_add<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;note&quot;</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span> value<span class="token operator">=</span><span class="token string">&quot;eu&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'},
+            {'name': 'note', 'type': 'string'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 83), ('note', 'eu')]),
+ Row([('id', 2), ('name', 'france'), ('population', 66), ('note', 'eu')]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47), ('note', 'eu')])]
+</code></pre> <p><strong>Filter Fields</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>field_filter<span class="token punctuation">(</span>names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'}]}
+[Row([('id', 1), ('name', 'germany')]),
+ Row([('id', 2), ('name', 'france')]),
+ Row([('id', 3), ('name', 'spain')])]
+</code></pre> <p><strong>Move Field</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>field_move<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span> position<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'},
+            {'name': 'id', 'type': 'integer'}]}
+[Row([('name', 'germany'), ('population', 83), ('id', 1)]),
+ Row([('name', 'france'), ('population', 66), ('id', 2)]),
+ Row([('name', 'spain'), ('population', 47), ('id', 3)])]
+</code></pre> <p><strong>Remove Field</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>field_remove<span class="token punctuation">(</span>names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('name', 'germany'), ('population', 83)]),
+ Row([('name', 'france'), ('population', 66)]),
+ Row([('name', 'spain'), ('population', 47)])]
+</code></pre> <p><strong>Split Field</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>field_split<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> to_names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;name1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;name2&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> pattern<span class="token operator">=</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'population', 'type': 'integer'},
+            {'name': 'name1', 'type': 'string'},
+            {'name': 'name2', 'type': 'string'}]}
+[Row([('id', 1), ('population', 83), ('name1', 'germ'), ('name2', 'ny')]),
+ Row([('id', 2), ('population', 66), ('name1', 'fr'), ('name2', 'nce')]),
+ Row([('id', 3), ('population', 47), ('name1', 'sp'), ('name2', 'in')])]
+</code></pre> <p><strong>Unpack Field</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>field_update<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token string">&quot;array&quot;</span><span class="token punctuation">,</span> value<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>field_unpack<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span> to_names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;id2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;id3&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'},
+            {'name': 'id2'},
+            {'name': 'id3'}]}
+[Row([('name', 'germany'), ('population', 83), ('id2', 1), ('id3', 1)]),
+ Row([('name', 'france'), ('population', 66), ('id2', 1), ('id3', 1)]),
+ Row([('name', 'spain'), ('population', 47), ('id2', 1), ('id3', 1)])]
+</code></pre> <p><strong>Update Field</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>field_update<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span> value<span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'string'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', '1'), ('name', 'germany'), ('population', 83)]),
+ Row([('id', '2'), ('name', 'france'), ('population', 66)]),
+ Row([('id', '3'), ('name', 'spain'), ('population', 47)])]
+</code></pre> <h2 id="row-steps"><a href="#row-steps" class="header-anchor">#</a> Row Steps</h2> <p><strong>Filter Rows</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>table_normalize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>row_filter<span class="token punctuation">(</span>predicat<span class="token operator">=</span><span class="token string">&quot;&lt;formula&gt;id &gt; 1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 2), ('name', 'france'), ('population', 66)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47)])]
+</code></pre> <p><strong>Search Rows</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>row_search<span class="token punctuation">(</span>regex<span class="token operator">=</span><span class="token string">r&quot;^f.*&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 2), ('name', 'france'), ('population', 66)])]
+</code></pre> <p><strong>Slice Rows</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>row_slice<span class="token punctuation">(</span>head<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 83)]),
+ Row([('id', 2), ('name', 'france'), ('population', 66)])]
+</code></pre> <p><strong>Sort Rows</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>row_sort<span class="token punctuation">(</span>field_names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 2), ('name', 'france'), ('population', 66)]),
+ Row([('id', 1), ('name', 'germany'), ('population', 83)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47)])]
+</code></pre> <p><strong>Split Rows</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>row_split<span class="token punctuation">(</span>field_name<span class="token operator">=</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> pattern<span class="token operator">=</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'germ'), ('population', 83)]),
+ Row([('id', 1), ('name', 'ny'), ('population', 83)]),
+ Row([('id', 2), ('name', 'fr'), ('population', 66)]),
+ Row([('id', 2), ('name', 'nce'), ('population', 66)]),
+ Row([('id', 3), ('name', 'sp'), ('population', 47)]),
+ Row([('id', 3), ('name', 'in'), ('population', 47)])]
+</code></pre> <p><strong>Subset Rows</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>field_update<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span> value<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>row_subset<span class="token punctuation">(</span>subset<span class="token operator">=</span><span class="token string">&quot;conflicts&quot;</span><span class="token punctuation">,</span> field_name<span class="token operator">=</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 83)]),
+ Row([('id', 1), ('name', 'france'), ('population', 66)]),
+ Row([('id', 1), ('name', 'spain'), ('population', 47)])]
+</code></pre> <p><strong>Ungroup Rows</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform-groups.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>row_ungroup<span class="token punctuation">(</span>group_name<span class="token operator">=</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> selection<span class="token operator">=</span><span class="token string">&quot;first&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'},
+            {'name': 'year', 'type': 'integer'}]}
+[Row([('id', 3), ('name', 'france'), ('population', 66), ('year', 2020)]),
+ Row([('id', 1), ('name', 'germany'), ('population', 83), ('year', 2020)]),
+ Row([('id', 5), ('name', 'spain'), ('population', 47), ('year', 2020)])]
+</code></pre> <h2 id="cell-steps"><a href="#cell-steps" class="header-anchor">#</a> Cell Steps</h2> <p><strong>Convert Cells</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>cell_convert<span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">&quot;n/a&quot;</span><span class="token punctuation">,</span> field_name<span class="token operator">=</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'n/a'), ('population', 83)]),
+ Row([('id', 2), ('name', 'n/a'), ('population', 66)]),
+ Row([('id', 3), ('name', 'n/a'), ('population', 47)])]
+</code></pre> <p><strong>Fill Cells</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>cell_replace<span class="token punctuation">(</span>pattern<span class="token operator">=</span><span class="token string">&quot;france&quot;</span><span class="token punctuation">,</span> replace<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        steps<span class="token punctuation">.</span>cell_fill<span class="token punctuation">(</span>field_name<span class="token operator">=</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> value<span class="token operator">=</span><span class="token string">&quot;FRANCE&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 83)]),
+ Row([('id', 2), ('name', 'FRANCE'), ('population', 66)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47)])]
+</code></pre> <p><strong>Format Cells</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>cell_format<span class="token punctuation">(</span>template<span class="token operator">=</span><span class="token string">&quot;Prefix: {0}&quot;</span><span class="token punctuation">,</span> field_name<span class="token operator">=</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'Prefix: germany'), ('population', 83)]),
+ Row([('id', 2), ('name', 'Prefix: france'), ('population', 66)]),
+ Row([('id', 3), ('name', 'Prefix: spain'), ('population', 47)])]
+</code></pre> <p><strong>Interpolate Cells</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>cell_interpolate<span class="token punctuation">(</span>template<span class="token operator">=</span><span class="token string">&quot;Prefix: %s&quot;</span><span class="token punctuation">,</span> field_name<span class="token operator">=</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'Prefix: germany'), ('population', 83)]),
+ Row([('id', 2), ('name', 'Prefix: france'), ('population', 66)]),
+ Row([('id', 3), ('name', 'Prefix: spain'), ('population', 47)])]
+</code></pre> <p><strong>Replace Cells</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+        steps<span class="token punctuation">.</span>cell_replace<span class="token punctuation">(</span>pattern<span class="token operator">=</span><span class="token string">&quot;france&quot;</span><span class="token punctuation">,</span> replace<span class="token operator">=</span><span class="token string">&quot;FRANCE&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 83)]),
+ Row([('id', 2), ('name', 'FRANCE'), ('population', 66)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 47)])]
+</code></pre> <p><strong>Set Cells</strong></p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>
+    source<span class="token punctuation">,</span>
+    steps<span class="token operator">=</span><span class="token punctuation">[</span>
+          steps<span class="token punctuation">.</span>cell_set<span class="token punctuation">(</span>field_name<span class="token operator">=</span><span class="token string">&quot;population&quot;</span><span class="token punctuation">,</span> value<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'id', 'type': 'integer'},
+            {'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('id', 1), ('name', 'germany'), ('population', 100)]),
+ Row([('id', 2), ('name', 'france'), ('population', 100)]),
+ Row([('id', 3), ('name', 'spain'), ('population', 100)])]
+</code></pre> <h2 id="custom-steps"><a href="#custom-steps" class="header-anchor">#</a> Custom Steps</h2> <p>Here is an example of a custom step written as a python function:</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Package<span class="token punctuation">,</span> Resource<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> steps
+<span class="token keyword">def</span> <span class="token function">step</span><span class="token punctuation">(</span>source<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Data</span>
+    <span class="token keyword">def</span> <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> row <span class="token keyword">in</span> source<span class="token punctuation">.</span>read_row_stream<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">del</span> row<span class="token punctuation">[</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">]</span>
+            <span class="token keyword">yield</span> row
+    <span class="token comment"># Meta</span>
+    target<span class="token punctuation">.</span>data <span class="token operator">=</span> data
+    target<span class="token punctuation">.</span>schema<span class="token punctuation">.</span>remove_field<span class="token punctuation">(</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">)</span>
+source <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">&quot;transform.csv&quot;</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> transform<span class="token punctuation">(</span>source<span class="token punctuation">,</span> steps<span class="token operator">=</span><span class="token punctuation">[</span>step<span class="token punctuation">]</span><span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>schema<span class="token punctuation">)</span>
+pprint<span class="token punctuation">(</span>target<span class="token punctuation">.</span>read_rows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><pre><code>{'fields': [{'name': 'name', 'type': 'string'},
+            {'name': 'population', 'type': 'integer'}]}
+[Row([('name', 'germany'), ('population', 83)]),
+ Row([('name', 'france'), ('population', 66)]),
+ Row([('name', 'spain'), ('population', 47)])]
+</code></pre> <h2 id="transform-utils"><a href="#transform-utils" class="header-anchor">#</a> Transform Utils</h2> <blockquote><p>Transform Utils is under construction</p></blockquote> <h2 id="working-with-petl"><a href="#working-with-petl" class="header-anchor">#</a> Working with PETL</h2> <p>In some cases, it’s better to use a lower-level API to achieve some goal. A resource can be exported as a PETL table. For more information please visit PETL’s <a href="https://petl.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer">documentation portal<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">from</span> frictionless <span class="token keyword">import</span> Resource
+resource <span class="token operator">=</span> Resource<span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">'transform.csv'</span><span class="token punctuation">)</span>
+petl_table <span class="token operator">=</span> resource<span class="token punctuation">.</span>to_petl<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># Use it with PETL framework</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>petl_table<span class="token punctuation">)</span>
+</code></pre></div><pre><code>+---+---------+----+
+|   |         |    |
++===+=========+====+
+| 1 | germany | 83 |
++---+---------+----+
+| 2 | france  | 66 |
++---+---------+----+
+| 3 | spain   | 47 |
++---+---------+----+
+</code></pre> <h2 id="working-with-dataflows"><a href="#working-with-dataflows" class="header-anchor">#</a> Working with DataFlows</h2> <p>DataFlows is a powerful framework you can also use for transforms. Please read more about it:</p> <ul><li><a href="https://github.com/datahq/dataflows/blob/master/TUTORIAL.md" target="_blank" rel="noopener noreferrer">DataFlows Tutorial<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://github.com/datahq/dataflows/blob/master/PROCESSORS.md" target="_blank" rel="noopener noreferrer">DataFlows Processors<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <hr class="hor-line"> <footer data-v-35ae81c2><div class="banner footer-sb page-edit flex flex-row" data-v-35ae81c2><div class="container flex flex-row" data-v-35ae81c2><div class="container" data-v-35ae81c2><p data-v-35ae81c2>About</p> <ul data-v-35ae81c2><li data-v-35ae81c2><a href="/about/" data-v-35ae81c2>About</a></li> <li data-v-35ae81c2><a href="/team/" data-v-35ae81c2>Contact</a></li> <li data-v-35ae81c2><a href="https://okfn.org/privacy-policy/" data-v-35ae81c2>Privacy Policy</a></li> <li data-v-35ae81c2><a href="https://okfn.org/terms-of-use/" data-v-35ae81c2>Terms of Use</a></li></ul></div> <div class="container" data-v-35ae81c2><p data-v-35ae81c2>Help</p> <ul data-v-35ae81c2><li data-v-35ae81c2><a href="/contribute/" data-v-35ae81c2>Support</a></li> <li data-v-35ae81c2><a href="/guide/" data-v-35ae81c2>Get started</a></li> <li data-v-35ae81c2><a href="https://discordapp.com/invite/Sewv6av" data-v-35ae81c2>Community</a></li></ul></div> <div class="container" data-v-35ae81c2><p data-v-35ae81c2>More</p> <ul data-v-35ae81c2><li data-v-35ae81c2><a href="/reproducible-research/" data-v-35ae81c2>Reproducible Research</a></li> <li data-v-35ae81c2><a href="/design/" data-v-35ae81c2>Design Assets</a></li> <li data-v-35ae81c2><a href="/blog/" data-v-35ae81c2>Blog</a></li></ul></div></div></div></footer> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/frictionlessdata/website-v2/edit/master/site/tooling/python/transforming-data/README.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/19/2020, 1:14:36 PM</span></div></footer> <!----> </main></div> <!----></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.027bcbbd.js" defer></script><script src="/assets/js/5.ac1a1d5f.js" defer></script><script src="/assets/js/2.66881210.js" defer></script><script src="/assets/js/138.fcf88379.js" defer></script>
+  </body>
+</html>
