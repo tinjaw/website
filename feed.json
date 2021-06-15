@@ -1,0 +1,89 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Frictionless Data",
+    "home_page_url": "https://frictionlessdata.io",
+    "feed_url": "https://frictionlessdata.io/feed.json",
+    "description": "Data software and standards",
+    "items": [
+        {
+            "id": "https://frictionlessdata.io/blog/2021/06/01/may-virtual-hangout/",
+            "url": "https://frictionlessdata.io/blog/2021/06/01/may-virtual-hangout/",
+            "title": "Frictionless Data May 2021 Virtual Hangout",
+            "summary": "On our last Frictionless Data community call on May 29 we had Simon Tyrrell and Xingdong Bian from the Earlham Institute giving a presentation on Frictionless Data for Wheat.",
+            "image": "https://frictionlessdata.io/img/blog/may.png",
+            "date_modified": "2021-06-01T00:00:00.000Z"
+        },
+        {
+            "id": "https://frictionlessdata.io/blog/2021/05/03/april-virtual-hangout/",
+            "url": "https://frictionlessdata.io/blog/2021/05/03/april-virtual-hangout/",
+            "title": "Frictionless Data April 2021 Virtual Hangout",
+            "summary": "On our last Frictionless Data community call on April 29 we had an interactive session with our great Frictionless Data Fellows.",
+            "image": "https://frictionlessdata.io/img/blog/april.png",
+            "date_modified": "2021-05-03T00:00:00.000Z"
+        },
+        {
+            "id": "https://frictionlessdata.io/blog/2021/04/14/new-data-documentation-portal/",
+            "url": "https://frictionlessdata.io/blog/2021/04/14/new-data-documentation-portal/",
+            "title": "Unveiling the new Frictionless Data documentation portal",
+            "summary": "We invite you all to read our new and improved documentation portal that we created for Frictionless Framework",
+            "image": "https://frictionlessdata.io/img/blog/framework.png",
+            "date_modified": "2021-04-14T00:00:00.000Z"
+        },
+        {
+            "id": "https://frictionlessdata.io/blog/2021/04/13/data-package-for-intermine/",
+            "url": "https://frictionlessdata.io/blog/2021/04/13/data-package-for-intermine/",
+            "title": "Frictionless Data Package for InterMine",
+            "summary": "This blog is part of a series showcasing projects developed during the 2020 Tool Fund.",
+            "image": "https://frictionlessdata.io/img/blog/intermine.png",
+            "date_modified": "2021-04-13T00:00:00.000Z"
+        },
+        {
+            "id": "https://frictionlessdata.io/blog/2021/03/29/february-virtual-hangout/",
+            "url": "https://frictionlessdata.io/blog/2021/03/29/february-virtual-hangout/",
+            "title": "Frictionless Data March 2021 Virtual Hangout",
+            "summary": "On our last Frictionless Data community call on March 25th, we dealt with a very current topic thanks to Thorben Westerhuys, who presented his project on Frictionless Vaccination data.",
+            "image": "https://frictionlessdata.io/img/blog/march.png",
+            "date_modified": "2021-03-29T00:00:00.000Z"
+        },
+        {
+            "id": "https://frictionlessdata.io/blog/2021/03/05/frictionless-data-for-wheat/",
+            "url": "https://frictionlessdata.io/blog/2021/03/05/frictionless-data-for-wheat/",
+            "title": "Frictionless Data for Wheat",
+            "summary": "This blog is part of a series showcasing projects developed during the 2020-2021 Tool Fund. The Tool Fund provided five mini-grants of $5,000 to support individuals or organisations in developing an open tool for reproducible research.",
+            "image": "https://frictionlessdata.io/img/blog/wheat.png",
+            "date_modified": "2021-03-05T00:00:00.000Z"
+        },
+        {
+            "id": "https://frictionlessdata.io/blog/2021/03/01/february-virtual-hangout/",
+            "url": "https://frictionlessdata.io/blog/2021/03/01/february-virtual-hangout/",
+            "title": "Frictionless Data February 2021 Virtual Hangout",
+            "summary": "On this February Community Call we had a top notch code demonstration of the new frictionless.py framework by our Frictionless Data senior developer Evgeny Karev.",
+            "image": "https://frictionlessdata.io/img/blog/february.png",
+            "date_modified": "2021-03-01T00:00:00.000Z"
+        },
+        {
+            "id": "https://frictionlessdata.io/blog/2021/02/26/halfway-odi/",
+            "url": "https://frictionlessdata.io/blog/2021/02/26/halfway-odi/",
+            "title": "How we are improving the quality and interoperability of Frictionless Data",
+            "summary": "We are halfway through the process of reviewing our documentation and adding new features to Frictionless Data, and wanted to give a status update showing how this work is improving the overall Frictionless experience.",
+            "image": "https://frictionlessdata.io/img/blog/odi.jpg",
+            "date_modified": "2021-02-26T00:00:00.000Z"
+        },
+        {
+            "id": "https://frictionlessdata.io/blog/2021/02/04/tableschema-to-template/",
+            "url": "https://frictionlessdata.io/blog/2021/02/04/tableschema-to-template/",
+            "title": "HuBMAP - Table Schema generating an Excel template",
+            "summary": "The Human BioMolecular Atlas Program Given has developed tableschema-to-template which takes a Frictionless Table Schema as input, and returns an Excel template with embedded documentation and basic validations.",
+            "image": "https://frictionlessdata.io/img/blog/HuBMAP-Retina-Logo-Color.png",
+            "date_modified": "2021-02-04T00:00:00.000Z"
+        },
+        {
+            "id": "https://frictionlessdata.io/blog/2021/02/03/january-virtual-hangout/",
+            "url": "https://frictionlessdata.io/blog/2021/02/03/january-virtual-hangout/",
+            "title": "Frictionless Data January 2021 Virtual Hangout",
+            "summary": "On January 28th we had our first Frictionless Data Community Call for 2021. It was great to see it was so well attended!",
+            "image": "https://frictionlessdata.io/img/blog/january.png",
+            "date_modified": "2021-02-03T00:00:00.000Z"
+        }
+    ]
+}

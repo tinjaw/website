@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://frictionlessdata.io</id>
+    <title>Frictionless Data</title>
+    <updated>2021-06-15T16:08:41.360Z</updated>
+    <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
+    <link rel="alternate" href="https://frictionlessdata.io"/>
+    <link rel="self" href="https://frictionlessdata.io/feed.atom"/>
+    <subtitle>Data software and standards</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Frictionless Data May 2021 Virtual Hangout]]></title>
+        <id>https://frictionlessdata.io/blog/2021/06/01/may-virtual-hangout/</id>
+        <link href="https://frictionlessdata.io/blog/2021/06/01/may-virtual-hangout/">
+        </link>
+        <updated>2021-06-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[On our last Frictionless Data community call on May 29 we had Simon Tyrrell and Xingdong Bian from the Earlham Institute giving a presentation on Frictionless Data for Wheat.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Frictionless Data April 2021 Virtual Hangout]]></title>
+        <id>https://frictionlessdata.io/blog/2021/05/03/april-virtual-hangout/</id>
+        <link href="https://frictionlessdata.io/blog/2021/05/03/april-virtual-hangout/">
+        </link>
+        <updated>2021-05-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[On our last Frictionless Data community call on April 29 we had an interactive session with our great Frictionless Data Fellows.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Unveiling the new Frictionless Data documentation portal]]></title>
+        <id>https://frictionlessdata.io/blog/2021/04/14/new-data-documentation-portal/</id>
+        <link href="https://frictionlessdata.io/blog/2021/04/14/new-data-documentation-portal/">
+        </link>
+        <updated>2021-04-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We invite you all to read our new and improved documentation portal that we created for Frictionless Framework]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Frictionless Data Package for InterMine]]></title>
+        <id>https://frictionlessdata.io/blog/2021/04/13/data-package-for-intermine/</id>
+        <link href="https://frictionlessdata.io/blog/2021/04/13/data-package-for-intermine/">
+        </link>
+        <updated>2021-04-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This blog is part of a series showcasing projects developed during the 2020 Tool Fund.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Frictionless Data March 2021 Virtual Hangout]]></title>
+        <id>https://frictionlessdata.io/blog/2021/03/29/february-virtual-hangout/</id>
+        <link href="https://frictionlessdata.io/blog/2021/03/29/february-virtual-hangout/">
+        </link>
+        <updated>2021-03-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[On our last Frictionless Data community call on March 25th, we dealt with a very current topic thanks to Thorben Westerhuys, who presented his project on Frictionless Vaccination data.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Frictionless Data for Wheat]]></title>
+        <id>https://frictionlessdata.io/blog/2021/03/05/frictionless-data-for-wheat/</id>
+        <link href="https://frictionlessdata.io/blog/2021/03/05/frictionless-data-for-wheat/">
+        </link>
+        <updated>2021-03-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This blog is part of a series showcasing projects developed during the 2020-2021 Tool Fund. The Tool Fund provided five mini-grants of $5,000 to support individuals or organisations in developing an open tool for reproducible research.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Frictionless Data February 2021 Virtual Hangout]]></title>
+        <id>https://frictionlessdata.io/blog/2021/03/01/february-virtual-hangout/</id>
+        <link href="https://frictionlessdata.io/blog/2021/03/01/february-virtual-hangout/">
+        </link>
+        <updated>2021-03-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[On this February Community Call we had a top notch code demonstration of the new frictionless.py framework by our Frictionless Data senior developer Evgeny Karev.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How we are improving the quality and interoperability of Frictionless Data]]></title>
+        <id>https://frictionlessdata.io/blog/2021/02/26/halfway-odi/</id>
+        <link href="https://frictionlessdata.io/blog/2021/02/26/halfway-odi/">
+        </link>
+        <updated>2021-02-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We are halfway through the process of reviewing our documentation and adding new features to Frictionless Data, and wanted to give a status update showing how this work is improving the overall Frictionless experience.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[HuBMAP - Table Schema generating an Excel template]]></title>
+        <id>https://frictionlessdata.io/blog/2021/02/04/tableschema-to-template/</id>
+        <link href="https://frictionlessdata.io/blog/2021/02/04/tableschema-to-template/">
+        </link>
+        <updated>2021-02-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The Human BioMolecular Atlas Program Given has developed tableschema-to-template which takes a Frictionless Table Schema as input, and returns an Excel template with embedded documentation and basic validations.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Frictionless Data January 2021 Virtual Hangout]]></title>
+        <id>https://frictionlessdata.io/blog/2021/02/03/january-virtual-hangout/</id>
+        <link href="https://frictionlessdata.io/blog/2021/02/03/january-virtual-hangout/">
+        </link>
+        <updated>2021-02-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[On January 28th we had our first Frictionless Data Community Call for 2021. It was great to see it was so well attended!]]></summary>
+    </entry>
+</feed>
