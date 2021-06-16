@@ -6,6 +6,14 @@
     "description": "Data software and standards",
     "items": [
         {
+            "id": "https://frictionlessdata.io/blog/2021/06/16/new-changes-to-the-website/",
+            "url": "https://frictionlessdata.io/blog/2021/06/16/new-changes-to-the-website/",
+            "title": "Announcing New Changes to Our Website",
+            "summary": "We have finished making some new changes that we are very excited to tell you about!",
+            "image": "https://frictionlessdata.io/img/blog/fd-home.png",
+            "date_modified": "2021-06-16T00:00:00.000Z"
+        },
+        {
             "id": "https://frictionlessdata.io/blog/2021/06/01/may-virtual-hangout/",
             "url": "https://frictionlessdata.io/blog/2021/06/01/may-virtual-hangout/",
             "title": "Frictionless Data May 2021 Virtual Hangout",
@@ -76,14 +84,6 @@
             "summary": "The Human BioMolecular Atlas Program Given has developed tableschema-to-template which takes a Frictionless Table Schema as input, and returns an Excel template with embedded documentation and basic validations.",
             "image": "https://frictionlessdata.io/img/blog/HuBMAP-Retina-Logo-Color.png",
             "date_modified": "2021-02-04T00:00:00.000Z"
-        },
-        {
-            "id": "https://frictionlessdata.io/blog/2021/02/03/january-virtual-hangout/",
-            "url": "https://frictionlessdata.io/blog/2021/02/03/january-virtual-hangout/",
-            "title": "Frictionless Data January 2021 Virtual Hangout",
-            "summary": "On January 28th we had our first Frictionless Data Community Call for 2021. It was great to see it was so well attended!",
-            "image": "https://frictionlessdata.io/img/blog/january.png",
-            "date_modified": "2021-02-03T00:00:00.000Z"
         }
     ]
 }

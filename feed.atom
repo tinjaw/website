@@ -2,11 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://frictionlessdata.io</id>
     <title>Frictionless Data</title>
-    <updated>2021-06-15T16:08:41.360Z</updated>
+    <updated>2021-06-16T16:52:49.264Z</updated>
     <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
     <link rel="alternate" href="https://frictionlessdata.io"/>
     <link rel="self" href="https://frictionlessdata.io/feed.atom"/>
     <subtitle>Data software and standards</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Announcing New Changes to Our Website]]></title>
+        <id>https://frictionlessdata.io/blog/2021/06/16/new-changes-to-the-website/</id>
+        <link href="https://frictionlessdata.io/blog/2021/06/16/new-changes-to-the-website/">
+        </link>
+        <updated>2021-06-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We have finished making some new changes that we are very excited to tell you about!]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Frictionless Data May 2021 Virtual Hangout]]></title>
         <id>https://frictionlessdata.io/blog/2021/06/01/may-virtual-hangout/</id>
@@ -78,13 +86,5 @@
         </link>
         <updated>2021-02-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[The Human BioMolecular Atlas Program Given has developed tableschema-to-template which takes a Frictionless Table Schema as input, and returns an Excel template with embedded documentation and basic validations.]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Frictionless Data January 2021 Virtual Hangout]]></title>
-        <id>https://frictionlessdata.io/blog/2021/02/03/january-virtual-hangout/</id>
-        <link href="https://frictionlessdata.io/blog/2021/02/03/january-virtual-hangout/">
-        </link>
-        <updated>2021-02-03T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[On January 28th we had our first Frictionless Data Community Call for 2021. It was great to see it was so well attended!]]></summary>
     </entry>
 </feed>
