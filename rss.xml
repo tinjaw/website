@@ -4,7 +4,7 @@
         <title>Frictionless Data</title>
         <link>https://frictionlessdata.io</link>
         <description>Data software and standards</description>
-        <lastBuildDate>Wed, 16 Jun 2021 16:52:49 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 17 Jun 2021 15:56:20 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="https://frictionlessdata.io/feed.atom" rel="self" type="application/rss+xml"/>
@@ -87,15 +87,6 @@
             <pubDate>Fri, 26 Feb 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[We are halfway through the process of reviewing our documentation and adding new features to Frictionless Data, and wanted to give a status update showing how this work is improving the overall Frictionless experience.]]></description>
             <enclosure url="https://frictionlessdata.io/img/blog/odi.jpg">
-            </enclosure>
-        </item>
-        <item>
-            <title><![CDATA[HuBMAP - Table Schema generating an Excel template]]></title>
-            <link>https://frictionlessdata.io/blog/2021/02/04/tableschema-to-template/</link>
-            <guid>https://frictionlessdata.io/blog/2021/02/04/tableschema-to-template/</guid>
-            <pubDate>Thu, 04 Feb 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[The Human BioMolecular Atlas Program Given has developed tableschema-to-template which takes a Frictionless Table Schema as input, and returns an Excel template with embedded documentation and basic validations.]]></description>
-            <enclosure url="https://frictionlessdata.io/img/blog/HuBMAP-Retina-Logo-Color.png">
             </enclosure>
         </item>
     </channel>
