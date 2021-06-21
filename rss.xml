@@ -4,7 +4,7 @@
         <title>Frictionless Data</title>
         <link>https://frictionlessdata.io</link>
         <description>Data software and standards</description>
-        <lastBuildDate>Thu, 17 Jun 2021 15:56:20 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 21 Jun 2021 16:23:03 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="https://frictionlessdata.io/feed.atom" rel="self" type="application/rss+xml"/>
