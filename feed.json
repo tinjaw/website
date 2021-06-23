@@ -6,6 +6,14 @@
     "description": "Data software and standards",
     "items": [
         {
+            "id": "https://frictionlessdata.io/blog/2021/06/22/livemark/",
+            "url": "https://frictionlessdata.io/blog/2021/06/22/livemark/",
+            "title": "Welcome Livemark - the New Frictionless Data Tool",
+            "summary": "Introducing you to Livemark, the new Frictionless Data tool that allows you to publish data articles easily.",
+            "image": "https://frictionlessdata.io/img/blog/livemark-page.png",
+            "date_modified": "2021-06-22T00:00:00.000Z"
+        },
+        {
             "id": "https://frictionlessdata.io/blog/2021/06/16/new-changes-to-the-website/",
             "url": "https://frictionlessdata.io/blog/2021/06/16/new-changes-to-the-website/",
             "title": "Announcing New Changes to Our Website",
@@ -68,14 +76,6 @@
             "summary": "On this February Community Call we had a top notch code demonstration of the new frictionless.py framework by our Frictionless Data senior developer Evgeny Karev.",
             "image": "https://frictionlessdata.io/img/blog/february.png",
             "date_modified": "2021-03-01T00:00:00.000Z"
-        },
-        {
-            "id": "https://frictionlessdata.io/blog/2021/02/26/halfway-odi/",
-            "url": "https://frictionlessdata.io/blog/2021/02/26/halfway-odi/",
-            "title": "How we are improving the quality and interoperability of Frictionless Data",
-            "summary": "We are halfway through the process of reviewing our documentation and adding new features to Frictionless Data, and wanted to give a status update showing how this work is improving the overall Frictionless experience.",
-            "image": "https://frictionlessdata.io/img/blog/odi.jpg",
-            "date_modified": "2021-02-26T00:00:00.000Z"
         }
     ]
 }
