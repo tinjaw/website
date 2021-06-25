@@ -2,11 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://frictionlessdata.io</id>
     <title>Frictionless Data</title>
-    <updated>2021-06-24T19:13:07.598Z</updated>
+    <updated>2021-06-25T19:08:11.165Z</updated>
     <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
     <link rel="alternate" href="https://frictionlessdata.io"/>
     <link rel="self" href="https://frictionlessdata.io/feed.atom"/>
     <subtitle>Data software and standards</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Frictionless Data June 2021 Virtual Hangout]]></title>
+        <id>https://frictionlessdata.io/blog/2021/06/25/june-virtual-hangout/</id>
+        <link href="https://frictionlessdata.io/blog/2021/06/25/june-virtual-hangout/">
+        </link>
+        <updated>2021-06-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[At our June Frictionless Data community call we had Nikhil Vats giving a presentation on Frictionless Package for InterMine...]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Welcome Livemark - the New Frictionless Data Tool]]></title>
         <id>https://frictionlessdata.io/blog/2021/06/22/livemark/</id>
@@ -70,13 +78,5 @@
         </link>
         <updated>2021-03-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[This blog is part of a series showcasing projects developed during the 2020-2021 Tool Fund. The Tool Fund provided five mini-grants of $5,000 to support individuals or organisations in developing an open tool for reproducible research.]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Frictionless Data February 2021 Virtual Hangout]]></title>
-        <id>https://frictionlessdata.io/blog/2021/03/01/february-virtual-hangout/</id>
-        <link href="https://frictionlessdata.io/blog/2021/03/01/february-virtual-hangout/">
-        </link>
-        <updated>2021-03-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[On this February Community Call we had a top notch code demonstration of the new frictionless.py framework by our Frictionless Data senior developer Evgeny Karev.]]></summary>
     </entry>
 </feed>
