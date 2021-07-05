@@ -6,6 +6,14 @@
     "description": "Data software and standards",
     "items": [
         {
+            "id": "https://frictionlessdata.io/blog/2021/07/02/farewell-fellows/",
+            "url": "https://frictionlessdata.io/blog/2021/07/02/farewell-fellows/",
+            "title": "A Bittersweet Ending to Frictionless Fellows Cohort 2",
+            "summary": "As a final assignment, the Fellows have written blogs reflecting upon their experiences and what they learned during the programme...",
+            "image": "https://frictionlessdata.io/img/blog/fellows-ending.jpg",
+            "date_modified": "2021-07-02T00:00:00.000Z"
+        },
+        {
             "id": "https://frictionlessdata.io/blog/2021/06/28/frictionless-specs-european-commission/",
             "url": "https://frictionlessdata.io/blog/2021/06/28/frictionless-specs-european-commission/",
             "title": "A Short Case Study Involving Table Schema Frictionless Specs at the European Union",
@@ -60,22 +68,6 @@
             "summary": "We invite you all to read our new and improved documentation portal that we created for Frictionless Framework",
             "image": "https://frictionlessdata.io/img/blog/framework.png",
             "date_modified": "2021-04-14T00:00:00.000Z"
-        },
-        {
-            "id": "https://frictionlessdata.io/blog/2021/04/13/data-package-for-intermine/",
-            "url": "https://frictionlessdata.io/blog/2021/04/13/data-package-for-intermine/",
-            "title": "Frictionless Data Package for InterMine",
-            "summary": "This blog is part of a series showcasing projects developed during the 2020 Tool Fund.",
-            "image": "https://frictionlessdata.io/img/blog/intermine.png",
-            "date_modified": "2021-04-13T00:00:00.000Z"
-        },
-        {
-            "id": "https://frictionlessdata.io/blog/2021/03/29/february-virtual-hangout/",
-            "url": "https://frictionlessdata.io/blog/2021/03/29/february-virtual-hangout/",
-            "title": "Frictionless Data March 2021 Virtual Hangout",
-            "summary": "On our last Frictionless Data community call on March 25th, we dealt with a very current topic thanks to Thorben Westerhuys, who presented his project on Frictionless Vaccination data.",
-            "image": "https://frictionlessdata.io/img/blog/march.png",
-            "date_modified": "2021-03-29T00:00:00.000Z"
         }
     ]
 }
